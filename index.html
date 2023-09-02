@@ -12,13 +12,6 @@
 
     <script>
         navigator.registerProtocolHandler("web+myi", "https://cyzlucky.github.io/blog/%s", "My Custom Protocol");
-
-        // Test the registration
-        if (navigator.app.protocolHandlers.hasOwnProperty("web+myi")) {
-            alert("Protocol handler registered successfully.");
-        } else {
-            alert("Protocol handler registration failed.");
-        }
     </script>
 
     <a href="web+myi:test">test</a>
