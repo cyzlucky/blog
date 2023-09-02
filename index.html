@@ -11,11 +11,15 @@
     <h1>Register a custom protocol handler</h1>
 
     <script>
-        navigator.registerProtocolHandler("web+myi", "https://cyzlucky.github.io/blog/%s", "My Custom Protocol");
+        function registerProtocolHandler() {
+            console.log("点击了");
+            // Register the "mycustomprotocol" protocol for the website "example.com".
+            navigator.registerProtocolHandler("web+github", "https://cyzlucky.github.io/blog/?url=%s", "My Custom Protocol");
+        }
     </script>
 
-    <a href="web+myi:test">test</a>
-
+    <button onclick="registerProtocolHandler()">Register protocol</button>
+    <a href="web+github:wiki">Wiki</a>
 </body>
 
 </html>
