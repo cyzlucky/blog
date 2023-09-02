@@ -11,22 +11,20 @@
     <h1>Register a custom protocol handler</h1>
 
     <script>
-        function randomDigit() {
-  // 生成一个 [0, 9] 之间的随机数
-  var n = Math.floor(Math.random() * 10);
+        function randomLowercaseLetter() {
+  // 生成一个 [97, 122] 之间的随机数
+  var n = Math.floor(Math.random() * 26) + 97;
 
-  // 确保生成的数字是一个个位数
-  if (n > 9) {
-    n = n % 10;
-  }
+  // 将生成的数字转换为字符
+  var c = String.fromCharCode(n);
 
-  return n;
+  return c;
 }
         
         function registerProtocolHandler() {
             console.log("点击了");
             // Register the "mycustomprotocol" protocol for the website "example.com".
-            navigator.registerProtocolHandler("web+github" + randomDigit(), "https://cyzlucky.github.io/blog/?url=%s", "My Custom Protocol");
+            navigator.registerProtocolHandler("web+github" + randomLowercaseLetter(), "https://cyzlucky.github.io/blog/?url=%s", "My Custom Protocol");
         }
     </script>
 
